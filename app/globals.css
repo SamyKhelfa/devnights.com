@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #080812;
+    overflow-x: hidden;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080812;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #7c3aed;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #8b5cf6;
+  }
+
+  /* Text selection */
+  ::selection {
+    background: rgba(124, 58, 237, 0.35);
+    color: #f8fafc;
+  }
+}
+
+@layer utilities {
+  /* Gradient text */
+  .text-gradient {
+    background: linear-gradient(135deg, #c4b5fd 0%, #8b5cf6 50%, #a78bfa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Glass morphism */
+  .bg-glass {
+    background: rgba(15, 15, 30, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .bg-glass-card {
+    background: rgba(20, 20, 42, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Purple glow shadows */
+  .shadow-glow {
+    box-shadow: 0 0 24px rgba(124, 58, 237, 0.3), 0 0 60px rgba(124, 58, 237, 0.08);
+  }
+
+  .shadow-glow-sm {
+    box-shadow: 0 0 12px rgba(124, 58, 237, 0.35);
+  }
+}
+
+/* ─────────────── Keyframes ─────────────── */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-22px); }
+}
+
+@keyframes float-drift {
+  0%   { transform: translateY(0px) translateX(0px); }
+  25%  { transform: translateY(-14px) translateX(10px); }
+  75%  { transform: translateY(8px) translateX(-6px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50%       { opacity: 0.28; transform: scale(1.06); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); opacity: 0.8; }
+  50%       { transform: translateY(7px); opacity: 0.3; }
+}
+
+/* ─────────────── Animation classes ─────────────── */
+
+.animate-float        { animation: float 7s ease-in-out infinite; }
+.animate-float-drift  { animation: float-drift 10s ease-in-out infinite; }
+.animate-float-slow   { animation: float 12s ease-in-out infinite; }
+.animate-pulse-glow   { animation: pulse-glow 5s ease-in-out infinite; }
+.animate-fade-in-up   { animation: fade-in-up 0.65s ease-out forwards; }
+.animate-fade-in      { animation: fade-in 0.65s ease-out forwards; }
+.animate-scroll-bounce { animation: scroll-bounce 2s ease-in-out infinite; }
