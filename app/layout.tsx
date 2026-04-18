@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter, Space_Grotesk } from 'next/font/google'
+import { Inter, Bricolage_Grotesque } from 'next/font/google'
 import './globals.css'
 
 const inter = Inter({
@@ -8,9 +8,9 @@ const inter = Inter({
   display: 'swap',
 })
 
-const spaceGrotesk = Space_Grotesk({
+const bricolage = Bricolage_Grotesque({
   subsets: ['latin'],
-  variable: '--font-space-grotesk',
+  variable: '--font-bricolage',
   display: 'swap',
 })
 
@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="fr" className="scroll-smooth">
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} font-sans bg-[#080812] text-slate-100 antialiased`}
+        className={`${inter.variable} ${bricolage.variable} font-sans bg-[#080812] text-slate-100 antialiased`}
       >
         {children}
       </body>

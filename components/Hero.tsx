@@ -2,124 +2,81 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-x-clip"
     >
-      {/* ────── Animated background ────── */}
+      {/* ── Orbs – plus discrets, repositionnés ── */}
       <div className="absolute inset-0 pointer-events-none select-none" aria-hidden="true">
-        {/* Central glow */}
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-violet-600/10 blur-[130px] animate-pulse-glow" />
-        {/* Top-right orb */}
-        <div className="absolute -top-20 right-1/4 w-[400px] h-[400px] rounded-full bg-purple-700/8 blur-[110px] animate-float" />
-        {/* Bottom-left orb */}
-        <div className="absolute bottom-1/4 -left-20 w-[350px] h-[350px] rounded-full bg-violet-500/7 blur-[100px] animate-float-drift" />
-        {/* Bottom-right small accent */}
-        <div className="absolute bottom-0 right-1/3 w-[250px] h-[250px] rounded-full bg-purple-800/10 blur-[80px] animate-float-slow" />
-
-        {/* Grid overlay */}
-        <div
-          className="absolute inset-0 opacity-[0.025]"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(139, 92, 246, 1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(139, 92, 246, 1) 1px, transparent 1px)
-            `,
-            backgroundSize: '52px 52px',
-          }}
-        />
+        <div className="absolute top-1/4 right-0 w-[500px] h-[500px] rounded-full bg-violet-600/10 blur-[140px] animate-pulse-glow" />
+        <div className="absolute bottom-0 left-1/4 w-[350px] h-[350px] rounded-full bg-purple-700/8 blur-[120px] animate-float" />
       </div>
 
-      {/* ────── Content ────── */}
-      <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        {/* Availability badge */}
-        <div
-          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-violet-900/30 border border-violet-700/30 text-violet-300 text-sm font-medium mb-8 opacity-0 animate-fade-in-up"
+      {/* ── Contenu aligné à gauche ── */}
+      <div className="relative z-10 max-w-6xl mx-auto px-6 w-full pt-24 pb-16">
+
+        {/* Label discret */}
+        <p
+          className="text-violet-400 text-sm font-medium tracking-widest uppercase mb-8 opacity-0 animate-fade-in"
           style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-violet-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-violet-400" />
-          </span>
-          Disponible pour de nouveaux projets
-        </div>
-
-        {/* Greeting */}
-        <p
-          className="text-slate-400 text-lg font-medium mb-2 opacity-0 animate-fade-in-up"
-          style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
-        >
-          Bonjour, je suis
+          Développeur Fullstack &nbsp;·&nbsp; Alternance chez NORALSY
         </p>
 
-        {/* Name */}
+        {/* Nom – typographie forte */}
         <h1
-          className="font-display font-bold text-7xl md:text-9xl text-gradient leading-none mb-4 opacity-0 animate-fade-in-up"
-          style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}
+          className="font-display font-black leading-[0.88] mb-8 opacity-0 animate-fade-in-up"
+          style={{
+            fontSize: 'clamp(3.5rem, 11vw, 8.5rem)',
+            animationDelay: '0.2s',
+            animationFillMode: 'forwards',
+          }}
         >
-          Samy
+          <span className="text-white block">Samy</span>
+          <span className="text-gradient block">Khelfa.</span>
         </h1>
 
-        {/* Title */}
-        <h2
-          className="font-display font-semibold text-xl md:text-2xl text-white/80 mb-7 opacity-0 animate-fade-in-up"
-          style={{ animationDelay: '0.42s', animationFillMode: 'forwards' }}
-        >
-          Développeur{' '}
-          <span className="text-violet-400">Full Stack</span>
-          {' '}· Passionné par le web & le design
-        </h2>
-
-        {/* Description */}
+        {/* Accroche personnelle */}
         <p
-          className="text-slate-400 text-base md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed opacity-0 animate-fade-in-up"
-          style={{ animationDelay: '0.54s', animationFillMode: 'forwards' }}
+          className="text-slate-400 text-lg md:text-xl max-w-lg leading-relaxed mb-4 opacity-0 animate-fade-in-up"
+          style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}
         >
-          Je crée des expériences web modernes, performantes et élégantes.
-          Spécialisé en{' '}
-          <span className="text-violet-300 font-medium">React</span> et{' '}
-          <span className="text-violet-300 font-medium">Next.js</span>, j&apos;aime
-          allier technique et créativité pour donner vie à des projets ambitieux.
+          J&apos;ai passé des années à comprendre pourquoi les gens bloquaient
+          sur des outils tech. Maintenant je les construis mieux.
+        </p>
+        <p
+          className="text-slate-500 text-base max-w-md leading-relaxed mb-12 opacity-0 animate-fade-in-up"
+          style={{ animationDelay: '0.45s', animationFillMode: 'forwards' }}
+        >
+          Support technique → code. La reconversion qui m&apos;a appris à
+          penser avec l&apos;utilisateur, pas contre lui.
         </p>
 
-        {/* CTA buttons */}
+        {/* CTAs */}
         <div
-          className="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fade-in-up"
-          style={{ animationDelay: '0.66s', animationFillMode: 'forwards' }}
+          className="flex flex-wrap gap-4 opacity-0 animate-fade-in-up"
+          style={{ animationDelay: '0.55s', animationFillMode: 'forwards' }}
         >
           <a
             href="#projects"
-            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-violet-600 to-purple-700 hover:from-violet-500 hover:to-purple-600 text-white font-semibold text-base transition-all duration-200 shadow-lg shadow-violet-500/25 hover:shadow-violet-500/40 hover:-translate-y-0.5"
+            className="px-7 py-3.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-base transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/30 hover:-translate-y-px"
           >
             Voir mes projets
           </a>
           <a
             href="#contact"
-            className="px-8 py-3.5 rounded-xl bg-glass border border-violet-700/35 text-violet-300 hover:text-white hover:border-violet-500/60 font-semibold text-base transition-all duration-200 hover:-translate-y-0.5"
+            className="px-7 py-3.5 rounded-xl border border-violet-800/50 text-slate-400 hover:text-white hover:border-violet-600/60 font-semibold text-base transition-all duration-200 hover:-translate-y-px"
           >
             Me contacter
           </a>
         </div>
-      </div>
 
-      {/* ────── Scroll indicator ────── */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in"
-        style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}
-        aria-hidden="true"
-      >
-        <span className="text-slate-600 text-xs font-medium tracking-widest uppercase">
-          Défiler
-        </span>
-        <div className="flex flex-col items-center gap-1 animate-scroll-bounce">
-          <div className="w-px h-8 bg-gradient-to-b from-violet-700/60 to-transparent" />
-          <svg
-            className="w-3.5 h-3.5 text-violet-700"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
+        {/* Ligne décorative */}
+        <div
+          className="mt-20 flex items-center gap-4 opacity-0 animate-fade-in"
+          style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}
+          aria-hidden="true"
+        >
+          <div className="w-12 h-px bg-violet-700/50" />
+          <span className="text-slate-700 text-xs tracking-widest uppercase">devnights.com</span>
         </div>
       </div>
     </section>
