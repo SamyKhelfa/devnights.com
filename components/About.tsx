@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import RevealOnScroll from './RevealOnScroll'
 
 const skills = [
@@ -36,20 +37,21 @@ export default function About() {
           <div className="w-12 h-px bg-violet-700/60 mt-6 mb-16" />
         </RevealOnScroll>
 
-        <div className="grid md:grid-cols-5 gap-16 items-start">
+        <div className="grid md:grid-cols-5 gap-12 lg:gap-16 items-start">
 
           {/* ── Texte – 3 colonnes ── */}
-          <RevealOnScroll delay={100} className="md:col-span-3">
+          <RevealOnScroll delay={100} className="md:col-span-3 order-2 md:order-1">
             <div className="space-y-5">
               <p className="text-slate-300 text-lg leading-relaxed">
                 Avant de coder, j&apos;ai passé plusieurs années en{' '}
-                <span className="text-white font-medium">support technique</span>, à gérer des incidents, décortiquer les blocages des utilisateurs,
+                <span className="text-white font-medium">support technique</span>,
+                à gérer des incidents, décortiquer les blocages des utilisateurs,
                 et apprendre à communiquer clairement sous pression.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 C&apos;est là que j&apos;ai compris que la meilleure tech ne sert
                 à rien si elle ne répond pas à un vrai besoin. Aujourd&apos;hui je
-                construis des applications avec cette double lecture 
+                construis des applications avec cette double lecture —
                 technique et orientée usage.
               </p>
               <p className="text-slate-400 leading-relaxed">
@@ -66,7 +68,6 @@ export default function About() {
               <p className="text-slate-600 text-xs font-medium tracking-widest uppercase mb-4">
                 En ce moment
               </p>
-
               <div className="flex items-start gap-4 p-4 rounded-xl bg-glass-card border border-violet-900/25">
                 <div className="mt-1 w-2 h-2 rounded-full bg-violet-400 shrink-0 animate-ping" />
                 <div>
@@ -76,7 +77,6 @@ export default function About() {
                   </p>
                 </div>
               </div>
-
               <div className="flex items-start gap-4 p-4 rounded-xl bg-glass-card border border-violet-900/25">
                 <div className="mt-1 w-2 h-2 rounded-full bg-blue-400 shrink-0" />
                 <div>
@@ -87,22 +87,45 @@ export default function About() {
                 </div>
               </div>
             </div>
+
+            {/* Skills */}
+            <div className="mt-10">
+              <p className="text-slate-600 text-xs font-medium tracking-widest uppercase mb-4">
+                Stack
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span
+                    key={skill.name}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-medium border ${skill.color} hover:scale-105 transition-transform duration-150 cursor-default`}
+                  >
+                    {skill.name}
+                  </span>
+                ))}
+              </div>
+            </div>
           </RevealOnScroll>
 
-          {/* ── Skills – 2 colonnes ── */}
-          <RevealOnScroll delay={200} className="md:col-span-2">
-            <p className="text-slate-600 text-xs font-medium tracking-widest uppercase mb-5">
-              Stack
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {skills.map((skill) => (
-                <span
-                  key={skill.name}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-medium border ${skill.color} hover:scale-105 transition-transform duration-150 cursor-default`}
-                >
-                  {skill.name}
-                </span>
-              ))}
+          {/* ── Photo – 2 colonnes ── */}
+          <RevealOnScroll delay={50} className="md:col-span-2 order-1 md:order-2">
+            <div className="relative">
+              {/* Glow derrière la photo */}
+              <div
+                className="absolute inset-0 rounded-2xl bg-violet-600/20 blur-2xl scale-95 translate-y-4"
+                aria-hidden="true"
+              />
+              <div className="relative rounded-2xl overflow-hidden border border-violet-800/30">
+                <Image
+                  src="/samy.png"
+                  alt="Samy Khelfa"
+                  width={600}
+                  height={750}
+                  className="w-full h-auto object-cover grayscale-[15%]"
+                  priority
+                />
+                {/* Dégradé bas pour fondre avec le fond */}
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#080812]/80 to-transparent" />
+              </div>
             </div>
           </RevealOnScroll>
 
