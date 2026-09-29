@@ -59,6 +59,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 mt-8">
             <a
               href={CALENDLY_URL}
+              data-track="hero-calendly"
               target="_blank"
               rel="noopener noreferrer"
               className="px-6 py-3 rounded-full bg-violet-500 hover:bg-violet-400 text-white font-semibold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/30 hover:-translate-y-px"
@@ -67,6 +68,7 @@ export default function Hero() {
             </a>
             <a
               href="#contact"
+              data-track="hero-contact"
               className="px-6 py-3 rounded-full border border-violet-800/50 text-slate-300 hover:text-white hover:border-violet-600/60 font-semibold text-sm transition-all duration-200 hover:-translate-y-px"
             >
               Me contacter
@@ -82,6 +84,7 @@ export default function Hero() {
                 <Link
                   key={e.slug}
                   href={`/experiences/${e.slug}`}
+                  data-track={`hero-experience-${e.slug}`}
                   className="group flex items-start gap-3 p-3.5 rounded-xl bg-glass-card border border-violet-900/30 hover:border-violet-600/50 transition-colors"
                 >
                   <span className="mt-1.5 w-2 h-2 rounded-full bg-violet-400 shrink-0 animate-pulse" />

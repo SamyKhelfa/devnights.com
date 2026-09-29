@@ -21,6 +21,7 @@ export default function Footer() {
           <div className="flex flex-wrap gap-2 mt-5">
             <a
               href={CALENDLY_URL}
+              data-track="footer-calendly"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-1.5 rounded-full bg-violet-500 hover:bg-violet-400 text-white text-xs font-semibold transition-colors"
@@ -29,6 +30,7 @@ export default function Footer() {
             </a>
             <a
               href={`mailto:${EMAIL}`}
+              data-track="footer-email"
               className="px-4 py-1.5 rounded-full border border-violet-800/50 text-slate-300 hover:text-white text-xs font-semibold transition-colors"
             >
               Envoyer un email
@@ -56,6 +58,7 @@ export default function Footer() {
               <li key={s.label}>
                 <a
                   href={s.href}
+                  data-track={`footer-${s.label.toLowerCase()}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-slate-400 hover:text-violet-300 text-sm transition-colors"

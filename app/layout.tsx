@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter, Bricolage_Grotesque } from 'next/font/google'
 import './globals.css'
+import Analytics from '@/components/Analytics'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -57,6 +58,7 @@ export default function RootLayout({
         className={`${inter.variable} ${bricolage.variable} font-sans bg-[#080812] text-slate-100 antialiased`}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   )

@@ -18,6 +18,7 @@ export default function Realisations() {
             <RevealOnScroll key={e.slug} delay={i * 80}>
               <Link
                 href={`/experiences/${e.slug}`}
+                data-track={`realisation-${e.slug}`}
                 className="group block h-full p-6 rounded-xl bg-glass-card border border-violet-900/30 hover:border-violet-600/50 hover:-translate-y-0.5 transition-all"
               >
                 <div className="flex items-center gap-3">

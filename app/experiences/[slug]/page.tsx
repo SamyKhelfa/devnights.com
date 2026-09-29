@@ -74,6 +74,7 @@ export default function ExperiencePage({ params }: Props) {
           <p className="text-white font-semibold">Un projet similaire en tête ?</p>
           <a
             href={CALENDLY_URL}
+            data-track={`experience-${exp.slug}-calendly`}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block mt-4 px-6 py-2.5 rounded-full bg-violet-500 hover:bg-violet-400 text-white text-sm font-semibold transition-colors"

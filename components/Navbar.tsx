@@ -40,6 +40,7 @@ export default function Navbar() {
           </ul>
           <a
             href={CALENDLY_URL}
+            data-track="navbar-calendly"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-1.5 rounded-full bg-violet-500 hover:bg-violet-400 text-white text-sm font-semibold transition-colors duration-200"
@@ -92,6 +93,7 @@ export default function Navbar() {
           <li className="pt-2">
             <a
               href={CALENDLY_URL}
+              data-track="navbar-calendly-mobile"
               target="_blank"
               rel="noopener noreferrer"
               className="block px-4 py-2.5 rounded-full bg-violet-500 hover:bg-violet-400 text-white text-sm font-semibold text-center transition-colors"

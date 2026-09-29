@@ -22,7 +22,11 @@ export default function Services() {
                 {s.example && (
                   <p className="text-slate-500 text-xs mt-4">
                     Exemple ·{' '}
-                    <Link href={s.example.href} className="text-violet-400 hover:text-violet-300">
+                    <Link
+                      href={s.example.href}
+                      data-track={`service-example-${s.example.label.toLowerCase()}`}
+                      className="text-violet-400 hover:text-violet-300"
+                    >
                       {s.example.label} →
                     </Link>
                   </p>
