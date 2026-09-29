@@ -43,6 +43,11 @@ export default function Hero() {
             gens bloquaient sur leurs outils. Maintenant je les construis, en web
             comme en mobile, en pensant d&apos;abord à celui qui va s&apos;en servir.
           </p>
+          <p className="text-slate-500 text-sm leading-relaxed mt-3 max-w-lg">
+            <span aria-hidden="true">🌙 </span>
+            DevNights, parce que je code mieux quand l&apos;écran est sombre. Ici, pas de
+            mode clair, c&apos;est promis.
+          </p>
 
           <p className="text-slate-600 text-xs mt-6 mb-2">Technos clés</p>
           <div className="flex flex-wrap gap-2">

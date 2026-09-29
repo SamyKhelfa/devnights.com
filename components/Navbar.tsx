@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Logo from './Logo'
+import NightToggle from './NightToggle'
 import { CALENDLY_URL, navLinks } from '@/lib/data'
 
 export default function Navbar() {
@@ -25,8 +26,8 @@ export default function Navbar() {
       <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
         <Logo />
 
-        <div className="hidden md:flex items-center gap-7">
-          <ul className="flex items-center gap-6">
+        <div className="flex items-center gap-3 md:gap-5">
+          <ul className="hidden md:flex items-center gap-6 mr-2">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <a
@@ -38,39 +39,39 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
+          <NightToggle />
           <a
             href={CALENDLY_URL}
             data-track="navbar-calendly"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-4 py-1.5 rounded-full bg-violet-500 hover:bg-violet-400 text-white text-sm font-semibold transition-colors duration-200"
+            className="hidden md:inline-block px-4 py-1.5 rounded-full bg-violet-500 hover:bg-violet-400 text-white text-sm font-semibold transition-colors duration-200"
           >
             Réserver un appel
           </a>
+          <button
+            className="md:hidden p-2 text-slate-400 hover:text-violet-300 transition-colors"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label="Menu"
+            aria-expanded={mobileOpen}
+          >
+            <div
+              className={`w-5 h-0.5 bg-current mb-1.5 transition-all duration-200 origin-center ${
+                mobileOpen ? 'rotate-45 translate-y-2' : ''
+              }`}
+            />
+            <div
+              className={`w-5 h-0.5 bg-current mb-1.5 transition-all duration-200 ${
+                mobileOpen ? 'opacity-0 scale-x-0' : ''
+              }`}
+            />
+            <div
+              className={`w-5 h-0.5 bg-current transition-all duration-200 origin-center ${
+                mobileOpen ? '-rotate-45 -translate-y-2' : ''
+              }`}
+            />
+          </button>
         </div>
-
-        <button
-          className="md:hidden p-2 text-slate-400 hover:text-violet-300 transition-colors"
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label="Menu"
-          aria-expanded={mobileOpen}
-        >
-          <div
-            className={`w-5 h-0.5 bg-current mb-1.5 transition-all duration-200 origin-center ${
-              mobileOpen ? 'rotate-45 translate-y-2' : ''
-            }`}
-          />
-          <div
-            className={`w-5 h-0.5 bg-current mb-1.5 transition-all duration-200 ${
-              mobileOpen ? 'opacity-0 scale-x-0' : ''
-            }`}
-          />
-          <div
-            className={`w-5 h-0.5 bg-current transition-all duration-200 origin-center ${
-              mobileOpen ? '-rotate-45 -translate-y-2' : ''
-            }`}
-          />
-        </button>
       </nav>
 
       <div
