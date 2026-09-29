@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import DailyViewsChart, { type DailyRow } from '@/components/DailyViewsChart'
 
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = { title: 'Stats | DevNights', robots: { index: false } }
@@ -62,10 +63,11 @@ function Table({ head, rows }: { head: string[]; rows: (string | number)[][] }) 
 }
 
 export default async function StatsPage() {
-  const [pages, clicks, recent] = await Promise.all([
+  const [pages, clicks, recent, daily] = await Promise.all([
     query<PageRow>('stats_pages?select=*&order=views.desc'),
     query<ClickRow>('stats_clicks?select=*&order=clicks.desc'),
     query<EventRow>('events?select=type,path,label,created_at&order=created_at.desc&limit=25'),
+    query<DailyRow>('stats_daily?select=*&order=day.asc'),
   ])
 
   const totalViews = pages.reduce((n, p) => n + p.views, 0)
@@ -84,6 +86,13 @@ export default async function StatsPage() {
         <Card label="Clics CTA" value={totalClicks} />
         <Card label="Clics 7 j" value={clicks7d} />
       </div>
+
+      <section className="space-y-4">
+        <h2 className="font-semibold text-white">Vues par jour · 30 derniers jours</h2>
+        <div className="p-5 rounded-xl bg-glass-card border border-violet-900/30">
+          <DailyViewsChart rows={daily} />
+        </div>
+      </section>
 
       <section className="space-y-4">
         <h2 className="font-semibold text-white">Clics par CTA</h2>
