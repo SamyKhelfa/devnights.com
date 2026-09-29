@@ -18,7 +18,7 @@ const bricolage = Bricolage_Grotesque({
 export const metadata: Metadata = {
   title: 'Samy Khelfa | Développeur Fullstack',
   description:
-    'Portfolio de Samy — Développeur Fullstack web & mobile, ouvert à une alternance. Découvrez mes projets et compétences.',
+    "DevNights, le portfolio de Samy Khelfa. Développeur Fullstack web & mobile (React, Next.js, React Native), ouvert à une alternance. Ici, il fait toujours nuit 🌙",
   keywords: [
     'développeur web',
     'React',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Samy Khelfa | Développeur Fullstack',
     description:
-      'Portfolio de Samy — Développeur Fullstack web & mobile, ouvert à une alternance.',
+      "Développeur Fullstack web & mobile, ouvert à une alternance. Sur DevNights, pas de mode clair, c'est promis 🌙",
     url: 'https://devnights.com',
     siteName: 'DevNights',
     type: 'website',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Samy Khelfa | Développeur Fullstack',
     description:
-      'Portfolio de Samy — Développeur Fullstack web & mobile, ouvert à une alternance.',
+      "Développeur Fullstack web & mobile, ouvert à une alternance. Sur DevNights, pas de mode clair, c'est promis 🌙",
   },
   metadataBase: new URL('https://devnights.com'),
 }
